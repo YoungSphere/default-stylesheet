@@ -8,7 +8,10 @@ This technique is still a work in progress. Styles for all elements are not yet
 completely isolated. Using the Firefox's browser default stylesheet means that
 it doesn't quite work as expected in other browsers.
 
-To see the current progress for yourself:
+To see the current progress for yourself visit [the example
+page](https://thallada.github.io/default-stylesheet/example/index.html).
+
+Alternatively, you can run it yourself by:
 
 ```bash
 git clone https://github.com/thallada/default-stylesheet
