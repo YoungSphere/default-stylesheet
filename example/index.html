@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: cornsilk;
+      }
+      p, input, label, select, ul, ol, code, pre, blockquote, button {
+        background-color: pink;
+        color: black;
+        font-family: monospace;
+        margin: 10px;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../dist/example.min.css">
+  </head>
+  <body>
+    <div>
+      <p>These are elements affected by the global styling on this page.</p>
+      <label><input type="checkbox"> A checkbox</label><br>
+      <input type="button" value="A button"><br>
+      <input type="textarea" value="Example text"><br>
+      <select>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+      </ul>
+      <ol>
+        <li>One</li>
+        <li>Two</li>
+      </ol>
+      <code>function () { console.log('Hello, world!'); }</code><br>
+      <pre>preformatted</pre><br>
+      <blockquote>"This is a blockquote!"</blockquote>
+      <button>Button!</button>
+    </div>
+    <div id="embedded" class="embedded">
+      <div class="embedded-wrapper">
+        <p>This is an embedded component isolated from the surrounding CSS cascade.</p>
+        <label><input type="checkbox"> A checkbox</label><br>
+        <input type="button" value="A button"><br>
+        <input type="textarea" value="Example text"><br>
+        <select>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <ul>
+          <li>One</li>
+          <li>Two</li>
+        </ul>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+        </ol>
+        <code>function () { console.log('Hello, world!'); }</code><br>
+        <pre>preformatted</pre><br>
+        <blockquote>"This is a blockquote!"</blockquote>
+        <button>Button!</button>
+      </div>
+    </div>
+  </body>
+</html>

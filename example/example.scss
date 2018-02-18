@@ -1,0 +1,46 @@
+/* Note: Because postcss-prepend-selector is used in this project, all selectors defined in any CSS/SCSS file will have
+ * "#embedded.embedded " prepended to them so that all styles here will be scoped to *only* the root div. */
+
+/* reset all element properties to initial values as defined in CSS spec (*not* browser defaults) */
+* {
+  all: initial;
+  /* allow all elements to inherit these properties from the root "body" div */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: left;
+  background-color: inherit;
+  cursor: inherit;
+}
+
+/* apply Firefox's default stylesheet so that Bootstrap has some browser-like styling to work with */
+// @import '../default.css';
+@import '../firefox.css';
+
+/* apply the Bootstrap reboot (normalize.css) to convert Firefox default styling to some cross-browser baseline
+ * then, apply the Bootstrap component styling */
+// @import '~bootstrap/scss/bootstrap';
+
+/* Since elements inside the embedded div can no longer inherit styles set on the <body>, we will apply the styles
+ * that the Bootstrap reboot applies to the <body> on the wrapper div instead, which containing elements can inherit.
+ *
+ * <div id="embedded" class="embedded">
+ *   <div class="embedded-wrapper">
+ *     <!-- ... embedded component here ... -->
+ *   </div>
+ * </div>
+ */
+.embedded-wrapper {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 16px;
+  color: black;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid red;
+  margin: 10px;
+  padding: 10px;
+}
