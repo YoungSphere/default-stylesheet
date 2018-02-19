@@ -9,7 +9,7 @@ completely isolated. Using the Firefox's browser default stylesheet means that
 it doesn't quite work as expected in other browsers.
 
 To see the current progress for yourself visit [the example
-page](https://thallada.github.io/default-stylesheet/example/index.html).
+page](https://www.hallada.net/default-stylesheet/example/index.html).
 
 Alternatively, you can run it yourself by:
 
