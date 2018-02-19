@@ -4,7 +4,8 @@
       body {
         background-color: cornsilk;
       }
-      p, input, label, select, ul, ol, code, pre, blockquote, button {
+      p, input, label, select, ul, ol, code, pre, blockquote, button, table, hr, details, summary, em, strong, i, b, q,
+      s, small, span, a, h1, h2, h3, h4, h5, h6 {
         background-color: pink;
         color: black;
         font-family: monospace;
@@ -16,6 +17,18 @@
   <body>
     <div>
       <p>These are elements affected by the global styling on this page.</p>
+      <p>
+        <em>Emphasized</em> <strong>strong</strong> <i>italic</i> <b>bold</b> <q>quoted</q> <s>strikethrough</s>
+        <small>small</small>
+      </p>
+      <span>Span</span><br>
+      <a href="https://github.com/thallada/default-stylesheet">Link</a><br>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
       <label><input type="checkbox"> A checkbox</label><br>
       <input type="button" value="A button"><br>
       <input type="textarea" value="Example text"><br>
@@ -35,11 +48,42 @@
       <code>function () { console.log('Hello, world!'); }</code><br>
       <pre>preformatted</pre><br>
       <blockquote>"This is a blockquote!"</blockquote>
+      <table>
+        <tr>
+          <th>Category 1</th>
+          <th>Category 2</th>
+        </tr>
+        <tr>
+          <td>0.34</td>
+          <td>1.12</td>
+        </tr>
+      </table>
+      <hr>
+      <details open>
+        <summary>Summary</summary>
+        <ol>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ol>
+      </details>
       <button>Button!</button>
     </div>
     <div id="embedded" class="embedded">
       <div class="embedded-wrapper">
         <p>This is an embedded component isolated from the surrounding CSS cascade.</p>
+        <p>
+          <em>Emphasized</em> <strong>strong</strong> <i>italic</i> <b>bold</b> <q>quoted</q> <s>strikethrough</s>
+          <small>small</small>
+        </p>
+        <span>Span</span><br>
+        <a href="https://github.com/thallada/default-stylesheet">Link</a><br>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
         <label><input type="checkbox"> A checkbox</label><br>
         <input type="button" value="A button"><br>
         <input type="textarea" value="Example text"><br>
@@ -59,6 +103,25 @@
         <code>function () { console.log('Hello, world!'); }</code><br>
         <pre>preformatted</pre><br>
         <blockquote>"This is a blockquote!"</blockquote>
+        <table>
+          <tr>
+            <th>Category 1</th>
+            <th>Category 2</th>
+          </tr>
+          <tr>
+            <td>0.34</td>
+            <td>1.12</td>
+          </tr>
+        </table>
+        <hr>
+        <details open>
+          <summary>Summary</summary>
+          <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ol>
+        </details>
         <button>Button!</button>
       </div>
     </div>
