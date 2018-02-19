@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    default: path.resolve(__dirname, 'firefox.css'),
+    default: path.resolve(__dirname, 'default.css'),
     example: path.resolve(__dirname, 'example/example.scss')
   },
   output: {

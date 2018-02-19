@@ -17,7 +17,7 @@
 
 /* apply Firefox's default stylesheet so that Bootstrap has some browser-like styling to work with */
 // @import '../default.css';
-@import '../firefox.css';
+@import '../default.css';
 
 /* apply the Bootstrap reboot (normalize.css) to convert Firefox default styling to some cross-browser baseline
  * then, apply the Bootstrap component styling */
