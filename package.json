@@ -40,6 +40,7 @@
     "postcss-initial": "^2.0.0",
     "postcss-loader": "^2.1.0",
     "postcss-prepend-selector": "^0.3.1",
+    "postcss-pseudo-class-any-link": "^4.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.2",
     "webpack": "^3.11.0"

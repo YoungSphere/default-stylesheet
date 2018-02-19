@@ -1053,6 +1053,19 @@ html:not([dir]) pre { /* Not a UA sheet, so doesn't use :has-dir-attr */
 
 *|*:any-link {
   cursor: pointer;
+  text-decoration: underline;
+}
+
+*|*:visited {
+  color: rgb(85, 26, 139);
+  color: -moz-visitedhyperlinktext;
+  color: -webkit-link;
+}
+
+*|*:link {
+  color: rgb(0, 0, 238);
+  color: -moz-hyperlinktext;
+  color: -webkit-link;
 }
 
 *|*:any-link:focusring {
@@ -2440,209 +2453,4 @@ input[type="time"] {
 }
 :autofill-preview {
   color: GrayText;
-}
-
-
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-@namespace url(http://www.w3.org/1999/xhtml); /* set default namespace to HTML */
-
-
-/* Quirk: make orphaned LIs have inside bullet (b=1049) */
-
-/* force inside position for orphaned lis */
-li {
-  list-style-position: inside;
-}
-
-/* restore outside position for lists inside LIs */
-li ul, li ol, li dir, li menu {
-  list-style-position: outside;
-}
-
-/* undo previous two rules for properly nested lists */
-  ul ul,   ul ol,   ul dir,   ul menu,   ul li,
-  ol ul,   ol ol,   ol dir,   ol menu,   ol li,
- dir ul,  dir ol,  dir dir,  dir menu,  dir li,
-menu ul, menu ol, menu dir, menu menu, menu li {
-  list-style-position: inherit;
-}
-
-
-/* Quirk: ensure that we get proper padding if the very first
- * node in an LI is another UL or OL. This is an ugly way to
- * fix the problem, because it extends the LI up into what
- * would otherwise appear to be the ULs space. (b=38832) */
-
-/* Note: this fix will fail once we implement marker box
- * alignment correctly. */
-li > ul:first-node,
-li > ol:first-node {
-  padding-block-start: 1em;
-}
-
-
-table {
-  text-align: start;
-  white-space: normal; /* compatible with IE & spec */
-  line-height: normal;
-
-  /* Quirk: cut off all font inheritance in tables except for family. */
-  font-size: initial;
-  font-weight: initial;
-  font-style: initial;
-  font-variant: initial;
-}
-
-/*
- * Make table borders gray for compatibility with what other browsers do
- * in all modes, rather than using the foreground color.
- */
-table, td, th, tr, thead, tbody, tfoot, colgroup, col {
-  border-color: gray;
-}
-
-
-/* Quirk: collapse top margin of BODY and TD and bottom margin of TD */
-
-/*
- * While it may seem simpler to use :first-node and :last-node without
- * tags, it's slower, since we have to do the :first-node or :last-node
- * check on every single element in the document.  If we list all the
- * element names for which the UA stylesheet specifies a margin, the
- * selectors will be hashed in the RuleHash and things will be much more
- * efficient.
- */
-body > p:first-node, td > p:first-node, th > p:first-node,
-body > dl:first-node, td > dl:first-node, th > dl:first-node,
-body > multicol:first-node, td > multicol:first-node, th > multicol:first-node,
-body > blockquote:first-node, td > blockquote:first-node, th > blockquote:first-node,
-body > h1:first-node, td > h1:first-node, th > h1:first-node,
-body > h2:first-node, td > h2:first-node, th > h2:first-node,
-body > h3:first-node, td > h3:first-node, th > h3:first-node,
-body > h4:first-node, td > h4:first-node, th > h4:first-node,
-body > h5:first-node, td > h5:first-node, th > h5:first-node,
-body > h6:first-node, td > h6:first-node, th > h6:first-node,
-body > listing:first-node, td > listing:first-node, th > listing:first-node,
-body > plaintext:first-node, td > plaintext:first-node, th > plaintext:first-node,
-body > xmp:first-node, td > xmp:first-node, th > xmp:first-node,
-body > pre:first-node, td > pre:first-node, th > pre:first-node,
-body > ul:first-node, td > ul:first-node, th > ul:first-node,
-body > menu:first-node, td > menu:first-node, th > menu:first-node,
-body > dir:first-node, td > dir:first-node, th > dir:first-node,
-body > ol:first-node, td > ol:first-node, th > ol:first-node {
-  margin-block-start: 0;
-}
-
-td > p:last-node, th > p:last-node {
-  margin-block-end: 0;
-}
-
-/* Similar as above, but for empty elements
- *  collapse the bottom or top margins of empty elements
- *  - see bug 97361
- */
-body > p:only-whitespace:first-node,
-td > p:only-whitespace:first-node, th > p:only-whitespace:first-node,
-body > dl:only-whitespace:first-node, td > dl:only-whitespace:first-node,
-th > dl:only-whitespace:first-node, body > multicol:only-whitespace:first-node,
-td > multicol:only-whitespace:first-node, th > multicol:only-whitespace:first-node,
-body > blockquote:only-whitespace:first-node, td > blockquote:only-whitespace:first-node,
-th > blockquote:only-whitespace:first-node, body > h1:only-whitespace:first-node,
-td > h1:only-whitespace:first-node, th > h1:only-whitespace:first-node,
-body > h2:only-whitespace:first-node, td > h2:only-whitespace:first-node,
-th > h2:only-whitespace:first-node, body > h3:only-whitespace:first-node,
-td > h3:only-whitespace:first-node, th > h3:only-whitespace:first-node,
-body > h4:only-whitespace:first-node, td > h4:only-whitespace:first-node,
-th > h4:only-whitespace:first-node, body > h5:only-whitespace:first-node,
-td > h5:only-whitespace:first-node, th > h5:only-whitespace:first-node,
-body > h6:only-whitespace:first-node, td > h6:only-whitespace:first-node,
-th > h6:only-whitespace:first-node, body > listing:only-whitespace:first-node,
-td > listing:only-whitespace:first-node, th > listing:only-whitespace:first-node,
-body > plaintext:only-whitespace:first-node, td > plaintext:only-whitespace:first-node,
-th > plaintext:only-whitespace:first-node, body > xmp:only-whitespace:first-node,
-td > xmp:only-whitespace:first-node, th > xmp:only-whitespace:first-node,
-body > pre:only-whitespace:first-node, td > pre:only-whitespace:first-node,
-th > pre:only-whitespace:first-node, body > ul:only-whitespace:first-node,
-td > ul:only-whitespace:first-node, th > ul:only-whitespace:first-node,
-body > menu:only-whitespace:first-node, td > menu:only-whitespace:first-node,
-th > menu:only-whitespace:first-node, body > dir:only-whitespace:first-node,
-td > dir:only-whitespace:first-node, th > dir:only-whitespace:first-node,
-body > ol:only-whitespace:first-node, td > ol:only-whitespace:first-node,
-th > ol:only-whitespace:first-node {
-  margin-block-end: 0;
-}
-
-td > p:only-whitespace:last-node, th > p:only-whitespace:last-node,
-td > dl:only-whitespace:last-node, th > dl:only-whitespace:last-node,
-td > multicol:only-whitespace:last-node, th > multicol:only-whitespace:last-node,
-td > blockquote:only-whitespace:last-node, th > blockquote:only-whitespace:last-node,
-td > h1:only-whitespace:last-node, th > h1:only-whitespace:last-node,
-td > h2:only-whitespace:last-node, th > h2:only-whitespace:last-node,
-td > h3:only-whitespace:last-node, th > h3:only-whitespace:last-node,
-td > h4:only-whitespace:last-node, th > h4:only-whitespace:last-node,
-td > h5:only-whitespace:last-node, th > h5:only-whitespace:last-node,
-td > h6:only-whitespace:last-node, th > h6:only-whitespace:last-node,
-td > listing:only-whitespace:last-node, th > listing:only-whitespace:last-node,
-td > plaintext:only-whitespace:last-node, th > plaintext:only-whitespace:last-node,
-td > xmp:only-whitespace:last-node, th > xmp:only-whitespace:last-node,
-td > pre:only-whitespace:last-node, th > pre:only-whitespace:last-node,
-td > ul:only-whitespace:last-node, th > ul:only-whitespace:last-node,
-td > menu:only-whitespace:last-node, th > menu:only-whitespace:last-node,
-td > dir:only-whitespace:last-node, th > dir:only-whitespace:last-node,
-td > ol:only-whitespace:last-node, th > ol:only-whitespace:last-node {
-  margin-block-start: 0;
-}
-
-
-/* Quirk: DD not in DL has text-indent instead of margin (b=5119) */
-
-:not(dl) > dd {
-  display: inline;
-  margin: 0;
-}
-
-:not(dl) > dd:before {
-  display: inline;
-  white-space: pre;
-  font-size: 1px;
-  line-height: 0;
-  content: "\A  ";
-  margin-inline-end: 40px;
-}
-
-
-/* quirk to indent nested DL elements (b=8749) */
-
-dl > dl {
-  display: block;
-  margin-inline-start: 40px;
-}
-
-
-/* Quirk: Make floated images have a margin  (b=58899) */
-img[align=left]:dir(ltr), img[align=right]:dir(rtl) {
-  margin-inline-end: 3px;
-}
-
-img[align=right]:dir(ltr), img[align=left]:dir(rtl) {
-  margin-inline-start: 3px;
-}
-
-/*
- * Quirk: Use border-box box sizing for text inputs, password inputs, and
- * textareas.  (b=184478 on why we use content-box sizing in standards mode)
- */
-
-/* Note that all other <input>s already use border-box
-   sizing, so we're ok with this selector */
-input:not([type=image]), textarea {
-  box-sizing: border-box;
-}
-
-/* Quirk: give form margin for compat (b=41806) */
-form {
-  margin-block-end: 1em;
 }

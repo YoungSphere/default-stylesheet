@@ -36,6 +36,7 @@ module.exports = {
                   /* eslint-disable global-require */
                   require('autoprefixer'),
 									require('./matches-prefixer.js'),
+                  require('postcss-pseudo-class-any-link'),
                   require('postcss-initial')(),
                   require('postcss-prepend-selector')({ selector: '#embedded.embedded ' }),
                   /* eslint-enable global-require */
