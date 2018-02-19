@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -62,6 +61,5 @@ module.exports = {
       filename: '[name].min.css',
       allChunks: true,
     }),
-    new OptimizeCssAssetsPlugin(),
   ],
 };
